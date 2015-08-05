@@ -17,6 +17,39 @@ Codeigniter DOM based template library
 </html>
 ```
 
+2. Your view file `./application/views/myview.php`
+```
+<template block="title">
+	Welcome to Simple Codeigniter Template
+</template>
+<template block="body">
+	This is the <i>body</i> section
+	<!-- some html comment -->
+</template>
+```
+
+3. Your controller file `./application/controller/Welcome.php`
+```
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Welcome extends CI_Controller {
+
+	public function index()
+	{
+		// $this->load->library('template');	// remark this line if you have autoloaded the library  
+		// $this->load->helper('template');		// remark this line if you have autoloaded the helper
+
+		// sample data to be loaded into view just like using $this->load->view('View File', $data);
+		$data['some_text'] = "Some content text here";
+		
+		// load views/myview.php with $data, rendered into 'default' template located at views/template/default.php
+		$this->template->render('myview', $data, 'default') ;
+	}
+}
+```
+
+
 ## Installing
 simply copy the following files into your codeigniter project
 
@@ -24,4 +57,4 @@ simply copy the following files into your codeigniter project
 1. Avoid new file extension such as .tpl
 2. Follow inheritance templating method
 3. Use of built in PHP method in parsing template blocks
-4. Suitable for beginner and simple use cases, avoid complex use case (like nesting templates, file includes, etc.)
+4. Suitable for beginner and cater to simple use cases
