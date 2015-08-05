@@ -4,12 +4,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title><?php echo $_template['title'] ; ?></title>
+	<title><?php echo $content['title'] ; ?></title>
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	<?php display_content('body') ; ?>
+	<?php echo content('body') ; ?>
 	<hr>
-	<?php display_content('footer') ; ?>
+	<?php echo content('footer', 'Footer did not exists, this is the default footer text') ; ?>
 </body>
 </html>

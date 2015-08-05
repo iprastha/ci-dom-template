@@ -21,10 +21,14 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		// $this->load->view('welcome_message');
-		// use template library
-		$this->load->library('template');
-		$this->load->helper('template');
+		// use template library instead
+		// $this->load->library('template');	// remark this line if you have autoloaded the library  
+		// $this->load->helper('template');		// remark this line if you have autoloaded the helper
 
-		$this->template->render('default', null, 'default') ;
+		// sample data to be loaded into view just like using $this->load->view('View File', $data);
+		$data['some_text'] = "Some content text here";
+
+		// load views/myview.php with $data, rendered into 'default' template located at views/template/default.php
+		$this->template->render('myview', $data, 'default') ;
 	}
 }

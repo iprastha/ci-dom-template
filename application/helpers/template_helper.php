@@ -8,34 +8,16 @@ if ( ! function_exists('display_content'))
 	* display_content(block_name, render)
 	* echo if content exists, otherwise return FALSE
 	*/
-	function display_content($block, $render = TRUE)
+	function content($block, $default_content = NULL)
 	{
-		$ci =& get_instance() ;
-		if(template_content_exists($block)){
-			if(!$render) return $ci->template->data['_template'][$block] ;
-			else echo $ci->template->data['_template'][$block] ;
+		$ci =& get_instance();
+		if($ci->template->block_exists($block)){
+			return $ci->template->data['template'][$block];
 		} else {
-			return false ;
+			return $default_content;
 		}
 	}
 }
 
-if ( ! function_exists('template_content_exists'))
-{
-	function template_content_exists($block){
-		if(!$block) return false ;
-
-		$ci =& get_instance() ;
-
-		if(is_array($ci->template->data['_template']) && array_key_exists($block,$ci->template->data['_template'])){
-			return true ;
-		} else {
-			return false ;
-		}
-
-	}
-}
-
-
-/* End of file _template_helper.php */
-/* Location: ./application/helpers/_template_helper.php */
+/* End of file template_helper.php */
+/* Location: ./application/helpers/template_helper.php */
