@@ -1,4 +1,4 @@
-# ci_dom_template
+# Codeigniter DOM Template Library
 Codeigniter DOM based template library
 
 ## 3 Steps to use this template system
