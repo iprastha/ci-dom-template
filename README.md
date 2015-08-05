@@ -2,7 +2,7 @@
 Codeigniter DOM based template library
 
 ## 3 Steps to use this template system
-1. Your template file (./application/views/template/default.php)
+1. Your template file `./application/views/template/default.php`
 ```
 <!DOCTYPE html>
 <html>
