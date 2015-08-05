@@ -19,17 +19,9 @@ class Template
         $this->ci =& get_instance();
 	}
 
-	public function render2($view, $data = null, $template = 'frontend')
-	{
-		$controller = $this->ci->router->fetch_class();
-		$data['content'] = $this->ci->load->view("{$controller}/{$view}", $data, TRUE);
-		$this->ci->load->view("template/{$template}", $data);
-	}
-
 	public function render($view, $viewdata = null, $template = 'frontend')
 	{
-		$controller = $this->ci->router->fetch_class();
-		$html = $this->ci->load->view("{$controller}/{$view}", $viewdata, TRUE);
+		$html = $this->ci->load->view($view, $viewdata, TRUE);
 		$this->data['template'] = $this->parse_blocks($html);
 		$this->data['_viewdata'] = $viewdata;
 		$this->ci->load->view("template/{$template}", $this->data);
