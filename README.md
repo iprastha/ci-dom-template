@@ -2,7 +2,6 @@
 Codeigniter DOM based template library
 
 ## 3 Steps to use this template system
-
 1. Your template file `./application/views/template/default.php`
 	```
 	<!DOCTYPE html>
@@ -50,12 +49,21 @@ Codeigniter DOM based template library
 	}
 	```
 
-
 ## Installing
-simply copy the following files into your codeigniter project
+1. Simply copy the following files into your codeigniter project
+	1.1. `./application/libraries/Template.php`
+	1.2. `./application/helpers/template_helper.php`
+2. Create a new folder called `template` under `./application/views/` and put your templates in that folder
+3. (Recomended) Autoload the Template library and template helper from your `./application/config/autoload.php` file
+4. Start using the template library in your controller like this
+	`$this->template->render('myview',$mydata,'template_file') ;`
+
 
 ## Consideration into creating this template system
 1. Avoid new file extension such as .tpl
 2. Follow inheritance templating method
 3. Use of built in PHP method in parsing template blocks
 4. Suitable for beginner and cater to simple use cases
+
+## Roadmap
+1. Create a testing template to measure the performance of the library
