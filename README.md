@@ -51,8 +51,8 @@ Codeigniter DOM based template library
 
 ## Installing
 1. Simply copy the following files into your codeigniter project
-	1.1. `./application/libraries/Template.php`
-	1.2. `./application/helpers/template_helper.php`
+	1. `./application/libraries/Template.php`
+	2. `./application/helpers/template_helper.php`
 2. Create a new folder called `template` under `./application/views/` and put your templates in that folder
 3. (Recomended) Autoload the Template library and template helper from your `./application/config/autoload.php` file
 4. Start using the template library in your controller like this
