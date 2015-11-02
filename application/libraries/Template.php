@@ -49,7 +49,10 @@ class Template
 		// avoid warning from html5 nodes which are not finalized in W3C spec
 		libxml_use_internal_errors(true); 
 
-		$dom->loadHTML($html);
+		// $dom->loadHTML($html);
+		// loadHTML is not handling UTF-8 characters, like Foreign language characters
+		// work around from : http://stackoverflow.com/questions/11309194/php-domdocument-failing-to-handle-utf-8-characters
+		$dom->loadHTML(mb_convert_encoding($html, "HTML-ENTITIES", "UTF-8"));
 
 		// revert error mechanism
 		libxml_use_internal_errors(false);
