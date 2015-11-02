@@ -1,1 +1,7 @@
 system/
+*.htaccess
+application/language/
+index.html
+application/views/errors/
+application/config/
+application/views/welcome_message.php
